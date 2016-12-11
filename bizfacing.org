@@ -16,15 +16,18 @@
 #+LaTeX_CLASS: beamer
 #+LaTeX_CLASS_OPTIONS: [presentation]
 #+BEAMER_THEME: diepen
+#+BEAMER_FRAME_LEVEL: 3
 #+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
 
 * Presentation
+** Disclaimer
 *** Disclaimer
     One smartphone app to deal with any emergency patient, anytime,
     anywhere any language
     
     /Currently in development, seeking investors/
     
+** Motivation
 *** Motivation
     + Clinicians do not currently have a multilingual, multi-modular
       app to deal with all the specificities of an emergency patient
@@ -33,6 +36,7 @@
      functionality
     + Potential market for such apps is global
    
+** App Market
 *** App Market
     + Medical students, nurses, medics, physicians assistants and doctors
       with smartphones
@@ -47,6 +51,7 @@
     + Mobile health app market is projected to hit 26 billion in revenue
       by 2017
    
+** Building The First Modules
 *** Building The First Modules
     + Staff salaries (3 programmers, one medical leader, one business
       manager): 1,000,000 NIS, or $250,000
@@ -55,6 +60,7 @@
     + Workspace for meetings, food, other: 25,000 NIS
     + Total cost: 1,100,000 NIS or about $300,000
    
+** Development Plan
 *** Development Plan
     + Develop each module and release for sale separately to be put inside
       the app shell which has one small free module (a compacted
@@ -69,9 +75,11 @@
       existing modules to well funded companies or Ministry of Health
       Israel, in case of good profitability: go public.
    
+** Product Looks
 *** Product Looks
     /three phone screens here/
     
+** Team
 *** Team
     + Dr. Candace Makeda Moore, MD; (emergency doc, photographer, founder)
     + Dr. Jeremy Rutman, PhD, (patent attorney, computer programmer/image
@@ -79,6 +87,7 @@
     + Mike Green, MS (biologist, computer programmer)
     + Hagar Shilo, BA (front end developer, linguist)
    
+** Accomplishments
 *** Accomplishments
     + Built website
     + Development of translation module underway, prototype/demo to be
@@ -87,6 +96,7 @@
     + Collaboration with Trendiguru vis a vis Dr. Rutman to receive
       algorithms for machine based 3D object recognition
    
+** The Real Plan
 *** The Real Plan
     + As new modules are developed, starting with translation module
     + Try to sell modules to rivals i.e. PEPID, Epocrates, etc.
