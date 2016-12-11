@@ -1,0 +1,96 @@
+#+TITLE:     Field Emergency App: Anamtastic
+#+AUTHOR:    Candace Makeda H. Moore, MD
+#+EMAIL:     makedaland@gmail.com
+#+DATE:      <2016-12-11 Sun>
+#+DESCRIPTION: Field Emergency App: Anamtastic
+#+KEYWORDS: emergency medicine mobile app application
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME:
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: diepen
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+* Presentation
+*** Disclaimer
+    One smartphone app to deal with any emergency patient, anytime,
+    anywhere any language
+    
+    /Currently in development, seeking investors/
+    
+*** Motivation
+    + Clinicians do not currently have a multilingual, multi-modular
+      app to deal with all the specificities of an emergency patient
+      encounter
+    + Existing apps in the USA are highly profitable, but very limited in
+     functionality
+    + Potential market for such apps is global
+   
+*** App Market
+    + Medical students, nurses, medics, physicians assistants and doctors
+      with smartphones
+    + Nearly all doctors have smartphones--even in most African and Asian
+      countries
+    + 3 billion a year market in USA alone
+    + The market for such a product could be predicted by the performance
+      of similar yet inferior apps already on the market.  *Epocrates* 50%
+      penetrance of American physicians, revenues well over 500 million
+      each year for last three years.  *PEPID* private company, low
+      penetrance, lack of reliable data on revenues
+    + Mobile health app market is projected to hit 26 billion in revenue
+      by 2017
+   
+*** Building The First Modules
+    + Staff salaries (3 programmers, one medical leader, one business
+      manager): 1,000,000 NIS, or $250,000
+    + Equipment (mobile phones, computers, additional cameras): 50,000 NIS
+    + Expert consultations: 25,000 NIS
+    + Workspace for meetings, food, other: 25,000 NIS
+    + Total cost: 1,100,000 NIS or about $300,000
+   
+*** Development Plan
+    + Develop each module and release for sale separately to be put inside
+      the app shell which has one small free module (a compacted
+      translation phrasebook)
+    + Development of translation module in first 3 months, release with
+      heavy marketing through Ministry of Health and Hospitals, post
+      release surveillance and improvement, and free partial phrasebook
+    + Development of skin module next in parallel with development of
+      other modules that are closer to apps on the market i.e. medical
+      dictionary module, drug information and interaction model etc.
+    + Exit strategy: At one year in case of incomplete funding: sell
+      existing modules to well funded companies or Ministry of Health
+      Israel, in case of good profitability: go public.
+   
+*** Product Looks
+    /three phone screens here/
+    
+*** Team
+    + Dr. Candace Makeda Moore, MD; (emergency doc, photographer, founder)
+    + Dr. Jeremy Rutman, PhD, (patent attorney, computer programmer/image
+      processing, physicist)
+    + Mike Green, MS (biologist, computer programmer)
+    + Hagar Shilo, BA (front end developer, linguist)
+   
+*** Accomplishments
+    + Built website
+    + Development of translation module underway, prototype/demo to be
+      completed on December 24^{th}, internal documents with algorithm and
+      design specifics currently in company dropbox
+    + Collaboration with Trendiguru vis a vis Dr. Rutman to receive
+      algorithms for machine based 3D object recognition
+   
+*** The Real Plan
+    + As new modules are developed, starting with translation module
+    + Try to sell modules to rivals i.e. PEPID, Epocrates, etc.
+    + Try to push national acquisitions due to legal noncompliance
+      (providing care in patient's language mandated in some countries)
+    + Business-wise we may be beat to market on some modules, but each can
+      be unpacked and sold once developed
