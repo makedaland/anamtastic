@@ -77,7 +77,12 @@
    
 ** Product Looks
 *** Product Looks
-    /three phone screens here/
+    #+ATTR_LATEX: :width 3.6cm
+    [[./presentation-images/module-selection-menu.png]]
+    #+ATTR_LATEX: :width 3.6cm
+    [[./presentation-images/skin-diagnostic-menu.png]]
+    #+ATTR_LATEX: :width 3.6cm
+    [[./presentation-images/language-select-menu.png]]
     
 ** Team
 *** Team
