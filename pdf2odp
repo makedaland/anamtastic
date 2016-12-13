@@ -1,0 +1,143 @@
+#!/usr/bin/python
+
+import sys, subprocess, os, glob, getopt
+
+def usage():
+    usage = """
+    Usage: %s [-x|--engine=] [-s|--scale=] pdffile [outfile]
+      -h --help        Prints help
+      -x --engine      Converter engine (gs or pdftocairo), default gs
+      -s --scale       Scale value, default 300
+    """
+    print usage %(os.path.basename(sys.argv[0]))
+
+# converter engine: gs or pdftocairo
+engine = 'gs'
+scale = 300
+pdffile = ''
+outfile = ''
+
+options, remainder = getopt.getopt(sys.argv[1:], 'hx:s:',
+                                   ['help','engine=', 'scale='])
+
+for opt, arg in options:
+    if opt in ('-x', '--engine'):
+        engine = arg
+    elif opt in ('-s', '--scale'):
+        scale = arg
+    elif opt in ('-h', '--help'):
+        usage()
+        sys.exit()
+
+if len(remainder) > 0:
+    pdffile = remainder[0]
+if len(remainder) > 1:
+    outfile = remainder[1]
+
+# Check for odfpy and file argument
+try:
+    from odf.opendocument import OpenDocumentPresentation
+    filename = pdffile
+except ImportError:
+    print "You need odfpy, exiting."
+    sys.exit(1)
+except IndexError:
+    usage()
+    sys.exit(2)
+
+from odf.style import Style, MasterPage, PageLayout, PageLayoutProperties, \
+TextProperties, GraphicProperties, ParagraphProperties, DrawingPageProperties
+from odf.text import P
+from odf.draw import Page, Frame, TextBox, Image
+
+# Check for file
+if not os.path.isfile(filename):
+    print "File %s not found, exiting." %filename
+    sys.exit(3)
+file, ext = os.path.splitext(filename)
+file = os.path.basename(file)
+if ext != '.pdf':
+    print "%s only accepts pdf files, exiting." %sys.argv[0]
+    sys.exit(4)
+
+# Check for converter engine
+try:
+    if engine == 'pdftocairo':
+        subprocess.call(['pdftocairo', '-v'], stdout=subprocess.PIPE)
+    else:
+        subprocess.call(['gs', '-v'], stdout=subprocess.PIPE)
+except OSError:
+    if engine == 'pdftocairo':
+        print "You need Poppler utils, exiting."
+    else:
+        print "You need Ghostscript, exiting."
+    sys.exit(5)
+
+if engine == 'pdftocairo':
+    engine_args = ['pdftocairo', '-png', '-scale-to', '%s' %(scale), filename,
+                   'tmp_%s_' %(file)]
+else:
+    engine_args = ['gs', '-dNOPAUSE', '-dSAFER', '-dBATCH',
+                   '-sDEVICE=pngalpha', '-r%s' %(scale),
+                   '-sOutputFile=tmp_%s_%%03d.png' %(file), filename]
+           
+# Try to run converter engine
+print 'Converting %s to images using %s\n' %(filename, engine)
+result = subprocess.Popen(engine_args)
+if result.wait():
+    print '\nRunning %s failed with the error above, exiting.' %engine
+    sys.exit(6)
+
+print "\nDone..."
+slides = glob.glob('tmp_%s*.png' %file)
+slides.sort()
+
+# Create document
+doc = OpenDocumentPresentation()
+
+pagelayout = PageLayout(name="OOSlides")
+doc.automaticstyles.addElement(pagelayout)
+pagelayout.addElement(PageLayoutProperties(margin="0cm", pagewidth="28cm", 
+                                           pageheight="21cm", 
+                                           printorientation="landscape"))
+
+# Style for the title frame of the page, not used for now
+titlestyle = Style(name="Title", family="presentation")
+titlestyle.addElement(ParagraphProperties(textalign="center"))
+titlestyle.addElement(TextProperties(fontsize="34pt"))
+titlestyle.addElement(GraphicProperties(fillcolor="#ffff99"))
+doc.styles.addElement(titlestyle)
+
+# Style for the image frame
+imagestyle = Style(name="Image", family="presentation")
+doc.styles.addElement(imagestyle)
+
+# Create automatic transition
+dpstyle = Style(name="dp1", family="drawing-page")
+dpstyle.addElement(DrawingPageProperties(transitiontype="manual",
+                                         transitionstyle=None, 
+                                         duration=None))
+doc.automaticstyles.addElement(dpstyle)
+
+# Every drawing page must have a master page assigned to it
+masterpage = MasterPage(name="Master", pagelayoutname=pagelayout)
+doc.masterstyles.addElement(masterpage)
+
+# Add slide to page
+for slide in slides:
+    page = Page(stylename=dpstyle, masterpagename=masterpage)
+    doc.presentation.addElement(page)
+    # Use whoe page
+    imageframe = Frame(stylename=imagestyle, width="28cm", height="21cm", x="0cm", y="0cm")
+    page.addElement(imageframe)
+    href = doc.addPicture(slide)
+    imageframe.addElement(Image(href=href))
+
+# Save file
+file = os.path.splitext(outfile)[0] if len(outfile) > 0 else file
+doc.save(file, True)
+print "Presentation saved as %s.odp" %file
+
+# Remove tmp files
+for file in slides:
+    os.remove(file)
