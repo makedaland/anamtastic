@@ -7,4 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_module_select">ModuleSelectActivity</string>
     <string name="title_activity_skin_diagnostic">SkinDiagnosticActivity</string>
+
+    <string name="title_stroke_suspect">Anamtastic: Stroke Suspect</string>
+    <string name="title_time_of_onset">Anamtastic: Evaluate Patient</string>
 </resources>

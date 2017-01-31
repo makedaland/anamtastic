@@ -9,8 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SkinDiagnosticActivity"
-            android:label="@string/app_name"
+            android:name=".StrokeSuspectActivity"
+            android:label="@string/title_stroke_suspect"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,10 @@
             android:label="@string/title_activity_module_select"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ModuleSelectActivity"
+            android:name=".SkinDiagnosticActivity"
             android:label="@string/title_activity_skin_diagnostic"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ModuleSelectActivity"></activity>
     </application>
 
 </manifest>
