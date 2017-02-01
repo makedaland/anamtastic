@@ -21,21 +21,96 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <TextView
-            android:text="time of onset"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/textView2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_height="match_parent">
 
-        <TimePicker
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/timePicker" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="177dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Time of onset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:textSize="24sp" />
+
+                <TimePicker
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timePicker2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <CheckBox
+                    android:text="Face dropping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBox"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:text="Arm weakness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBox2"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:text="Slurred speech"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBox3"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="30dp" />
+
+                <TextView
+                    android:text="Result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:textSize="24sp"
+                    android:textStyle="normal|bold"
+                    android:background="@color/colorAccent"
+                    tools:textColor="@android:color/background_light"
+                    android:paddingLeft="5dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:text="Stroke probability greater than"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="20dp" />
+
+                <TextView
+                    android:text="72%"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="normal|bold"
+                    android:textSize="48sp"
+                    android:textAlignment="textEnd" />
+
+                <Button
+                    android:text="1 hour left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button17" />
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

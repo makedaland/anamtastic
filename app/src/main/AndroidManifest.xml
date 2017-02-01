@@ -9,8 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".StrokeSuspectActivity"
-            android:label="@string/title_stroke_suspect"
+            android:name=".AvailableHardwareActivity"
+            android:label="@string/title_available_hardware"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +27,8 @@
             android:label="@string/title_activity_skin_diagnostic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ModuleSelectActivity"></activity>
+        <activity android:name=".TimeOfOnsetActivity"></activity>
+        <activity android:name=".StrokeSuspectActivity"></activity>
     </application>
 
 </manifest>

@@ -10,4 +10,5 @@
 
     <string name="title_stroke_suspect">Anamtastic: Stroke Suspect</string>
     <string name="title_time_of_onset">Anamtastic: Evaluate Patient</string>
+    <string name="title_available_hardware">Anamtastic: Available Hardware</string>
 </resources>
