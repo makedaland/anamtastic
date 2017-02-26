@@ -1,0 +1,16 @@
+* Obtaining
+  Provided you have =git= installed, executed the following command:
+
+  #+BEGIN_SRC sh
+    git clone git@github.com:makedaland/anamtastic.git
+    cd ./anamtastic
+  #+END_SRC
+
+* Installing
+  Nothing to do here yet.
+
+* Running
+  Nothing to do here yet.
+
+* Report bugs
+  https://github.com/makedaland/anamtastic/issues
