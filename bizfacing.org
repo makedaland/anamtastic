@@ -90,7 +90,7 @@
     + Dr. Jeremy Rutman, PhD, (patent attorney, computer programmer/image
       processing, physicist)
     + Mike Green, MS (biologist, computer programmer)
-    + Hagar Shilo, BA (front end developer, linguist)
+   
    
 ** Accomplishments
 *** Accomplishments
